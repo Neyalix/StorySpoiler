@@ -67,6 +67,7 @@ namespace StroySpoilerTests
 
             Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.Created));
             Assert.That(createResponse.Msg, Does.Contain("Successfully created!"));
+            Assert.That(createResponse.StoryId, Is.Not.Null.And.Not.Empty);
 
 
             lastCreatedStoryId = createResponse.StoryId;
